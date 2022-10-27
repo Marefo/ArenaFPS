@@ -22,7 +22,7 @@ namespace _CodeBase.UI
       _textField.text = $"{_indicator.CurrentValue}/{_indicator.MaxValue}";
       float percent = Mathf.InverseLerp(0, _indicator.MaxValue, _indicator.CurrentValue);
       _fill.DOKill();
-      _fill.DOFillAmount(percent, 0.25f);
+      _fill.DOFillAmount(percent, 0.25f).SetUpdate(true);
     }
   }
 }

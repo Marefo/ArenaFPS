@@ -2,7 +2,7 @@
 
 namespace _CodeBase.HeroCode.Data
 {
-  [CreateAssetMenu(fileName = "CameraRotatorSettings", menuName = "Settings/CameraRotator")]
+  [CreateAssetMenu(fileName = "CameraRotatorSettings", menuName = "Settings/Hero/CameraRotator")]
   public class CameraRotatorSettings : ScriptableObject
   {
     public float Sensitivity;

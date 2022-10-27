@@ -10,6 +10,7 @@ namespace _CodeBase.EnemyCode
     public event Action<Enemy> EnemyDead;
 
     public IReadOnlyList<Enemy> Enemies => _enemies;
+    public int KilledEnemies { get; private set; }
 
     private readonly List<Enemy> _enemies = new List<Enemy>();
 
@@ -52,6 +53,7 @@ namespace _CodeBase.EnemyCode
 
     private void RemoveEnemy(Enemy enemy)
     {
+      KilledEnemies += 1;
       enemy.Dead -= RemoveEnemy;
       EnemyDead?.Invoke(enemy);
       _enemies.Remove(enemy);

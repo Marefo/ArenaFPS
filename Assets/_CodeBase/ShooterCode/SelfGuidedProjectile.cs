@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using _CodeBase.Logic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 namespace _CodeBase.ShooterCode

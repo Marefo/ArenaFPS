@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35afc47d168a4c04be2cf99e6455d784, type: 3}
   m_Name: MobileCameraRotatorSettings
   m_EditorClassIdentifier: 
-  Sensitivity: 12
+  Sensitivity: 10

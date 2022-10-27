@@ -2,7 +2,7 @@
 
 namespace _CodeBase.EnemyCode.Flier.Data
 {
-  [CreateAssetMenu(fileName = "FlierSettings", menuName = "Settings/Flier")]
+  [CreateAssetMenu(fileName = "FlierSettings", menuName = "Settings/Enemy/Flier")]
   public class FlierSettings : ScriptableObject
   {
     public float Height;

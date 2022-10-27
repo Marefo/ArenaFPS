@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _CodeBase.EnemyCode.Boss.Data
 {
-  [CreateAssetMenu(fileName = "BossSettings", menuName = "Settings/Boss")]
+  [CreateAssetMenu(fileName = "BossSettings", menuName = "Settings/Enemy/Boss")]
   public class BossSettings : ScriptableObject
   {
     public float DistanceFromHero;

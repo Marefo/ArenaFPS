@@ -3,6 +3,7 @@ using System.Collections;
 using _CodeBase.EnemyCode.Data;
 using _CodeBase.HeroCode;
 using _CodeBase.Logging;
+using _CodeBase.Pointers;
 using _CodeBase.Points;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace _CodeBase.EnemyCode
     [SerializeField] private AnimationCurve _difficultyCurve;
     [Space(10)]
     [SerializeField] private Hero _hero;
+    [SerializeField] private PointerManager _pointerManager;
     [Space(10)]
     [SerializeField] private EnemiesSpawnPointsStorage _spawnPointsStorage;
     [SerializeField] private EnemiesMonitor _monitor;
@@ -63,7 +65,7 @@ namespace _CodeBase.EnemyCode
       GameObject prefab = _prefabsData.GetPrefab(spawnPoint.Type);
       Enemy enemy = Instantiate(prefab, spawnPoint.transform).GetComponent<Enemy>();
       enemy.transform.localPosition = Vector3.zero;
-      enemy.Initialize(spawnPoint.Type, _hero);
+      enemy.Initialize(spawnPoint.Type, _hero, _pointerManager);
       _monitor.AddEnemy(enemy);
     }
   }

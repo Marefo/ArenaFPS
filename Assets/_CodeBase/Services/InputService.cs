@@ -21,8 +21,10 @@ namespace _CodeBase.Services
 
     private void Update()
     {
-      Vector2 pcInput = _inputActions.Game.Movement.ReadValue<Vector2>();
-      _pcInput = new Vector3(pcInput.x, 0, pcInput.y);
+      #if UNITY_EDITOR
+        Vector2 pcInput = _inputActions.Game.Movement.ReadValue<Vector2>();
+        _pcInput = new Vector3(pcInput.x, 0, pcInput.y);
+      #endif
     }
 
     private Vector3 GetInput()

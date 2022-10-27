@@ -11,8 +11,10 @@ namespace _CodeBase.HeroCode
 {
   public class Hero : MonoBehaviour, IEnergyDamageable, IHealthDamageable, ISelfGuidedProjectileTarget
   {
+    public event Action Dead;
     public event Action<ISelfGuidedProjectileTarget, Vector3> Teleported;
 
+    public bool IsDead { get; private set; }
     public Transform TargetPoint => transform;
     
     [SerializeField] private EnemiesMonitor _enemiesMonitor;
@@ -28,17 +30,26 @@ namespace _CodeBase.HeroCode
     {
       _movement.Teleported += OnTeleport;
       _enemiesMonitor.EnemyDead += OnEnemyDie;
+      _health.ValueCameToZero += Die;
     }
 
     private void OnDisable()
     {
       _movement.Teleported -= OnTeleport;
       _enemiesMonitor.EnemyDead -= OnEnemyDie;
+      _health.ValueCameToZero -= Die;
     }
 
     public void ReceiveHealthDamage(int damage, DamageType damageType) => _health.Decrease(damage);
 
     public void ReceiveEnergyDamage(int damage) => _ultimateEnergy.Decrease(damage);
+
+    private void Die()
+    {
+      if(IsDead) return;
+      IsDead = true;
+      Dead?.Invoke();
+    }
 
     private void OnEnemyDie(Enemy enemy)
     {

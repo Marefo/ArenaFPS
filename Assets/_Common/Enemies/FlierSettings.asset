@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1f2222970f497ab237ca4b8e47c2f4, type: 3}
   m_Name: FlierSettings
   m_EditorClassIdentifier: 
-  Height: 3
+  Height: 2
   FlySpeed: 2
   ChaseDelay: 2
   ChaseSpeed: 1.3

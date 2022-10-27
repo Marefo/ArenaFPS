@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _CodeBase.HeroCode.Data
 {
-  [CreateAssetMenu(fileName = "HeroShooterSettings", menuName = "Settings/HeroShooter")]
+  [CreateAssetMenu(fileName = "HeroShooterSettings", menuName = "Settings/Hero/HeroShooter")]
   public class HeroShooterSettings : ScriptableObject
   {
     public float Delay;

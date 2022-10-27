@@ -2,7 +2,7 @@
 
 namespace _CodeBase.EnemyCode.Data
 {
-  [CreateAssetMenu(fileName = "SpawnerSettings", menuName = "Settings/Spawner")]
+  [CreateAssetMenu(fileName = "SpawnerSettings", menuName = "Settings/Enemy/Spawner")]
   public class SpawnerSettings : ScriptableObject
   {
     public float StartDelay;
